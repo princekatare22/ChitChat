@@ -8,7 +8,7 @@ import { useEffect, useMemo, useState } from "react";
 import { io } from "socket.io-client";
 
 function App() {
-  const socket = useMemo(() => io("https://chit-chat-backend-five.vercel.app:3000"), []);
+  const socket = useMemo(() => io("https://chit-chat-backend-five.vercel.app"), []);
   const [Allmessage, setAllmessage] = useState([]);
   const [message, setMessage] = useState("");
   const [room, setRoom] = useState("");
