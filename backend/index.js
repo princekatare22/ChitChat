@@ -4,6 +4,8 @@ const { createServer } = require("http");
 const cors = require("cors");
 const express = require("express");
 
+const PORT = 3000;
+
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
@@ -51,6 +53,6 @@ io.on("connection", function (socket) {
 
 app.get("/", function (req, res) {});
 
-server.listen(process.env.PORT, function () {
-  console.log(`Server Running on PORT ${process.env.PORT}`);
+server.listen(PORT, function () {
+  console.log(`Server Running on PORT ${PORT}`);
 });
