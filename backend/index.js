@@ -8,16 +8,11 @@ const PORT = 3000;
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server, {
-  cors: {
-   origin: '*',
-  },
+const io = new Server(server, {cors
 });
 
 app.use(
-  cors({
-   origin: '*',
-  })
+  cors()
 );
 
 io.on("connection", function (socket) {
