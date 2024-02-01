@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  background-color: #0d0d0d;
+  background-color: black;
   color: white;
 }
 
@@ -15,15 +15,16 @@ form {
   padding: 3px;
   text-align: center;
   margin-left: 40vw;
-  width: 15vw;
+  width: 20vw;
   color: white;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 16px;
   border: solid 2px #ffffff80;
 }
 
 .joinButton {
-  width: 16vw;
+  padding: 3px;
+  width: 20vw;
   background-color: lawngreen;
   color: black;
 }
@@ -53,9 +54,10 @@ form {
 }
 
 .lowerText {
-  width: 54vw;
-  margin-left: 20vw;
+  width: 47vw;
+  margin-left: 0;
   margin-right: 4px;
+  height: 4vh;
 }
 
 .SendButton {
@@ -66,13 +68,13 @@ form {
   width: 4vw;
   color: black;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 18px;
   border: solid 2px #ffffff80;
 }
 
 .textBox {
   color: black;
-  font-size: 12px;
+  font-size: 20px;
 }
 
 .user {
@@ -85,4 +87,33 @@ form {
   float: left;
   clear: both;
   background: transparent;
+}
+
+.fileinput {
+  margin-right: 5px;
+  margin-left: 20vw;
+  width: 3vw;
+  background-color: lawngreen;
+  color: black;
+}
+
+.fileinput::before {
+  content: " vedio                                              ";
+}
+
+.audio {
+  margin-left: 0px;
+}
+
+.audio::before {
+  content: " audio                                                    ";
+}
+
+.JoinRoom {
+  margin-top: 20vh;
+  text-align: center;
+  background-color: transparent;
+  color: #0d0d0d;
+  font-size: 48px;
+  font-weight: 800;
 }

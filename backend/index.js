@@ -23,10 +23,21 @@ app.use(
 io.on("connection", function (socket) {
   console.log("User Connected " + socket.id);
 
-  socket.on("message", function ({ room, message, name, userId }) {
-    console.log(room);
-    io.to(room).emit("receive-message", { userId, name, message });
-  });
+  socket.on(
+    "message",
+    function ({ room, message, name, userId, audio, vedio }) {
+      console.log("message received");
+      console.log({ room, message, name, userId, audio, vedio });
+
+      io.to(room).emit("receive-message", {
+        userId,
+        name,
+        message,
+        audio,
+        vedio,
+      });
+    }
+  );
 
   socket.on("disconnect", function () {
     console.log("User diconnected " + socket.id);
