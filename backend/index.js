@@ -1,17 +1,45 @@
-const express = require("express");
-const app = express();
-const mongoose = require("mongoose");
 require("dotenv").config();
+const { Server } = require("socket.io");
+const { createServer } = require("http");
+const cors = require("cors");
+const express = require("express");
 
-mongoose
-  .connect(process.env.Moongoose_URL)
-  .then(function () {
-    console.log("Connected to Database Successfully !!");
+const app = express();
+const server = createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:5173",
+    credentials: true,
+  },
+});
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
   })
-  .catch(function () {
-    console.log("Some Errror Connecting Database!!");
+);
+
+io.on("connection", function (socket) {
+  console.log("User Connected " + socket.id);
+
+  socket.on("message", function ({ room, message, name, userId }) {
+    console.log(room);
+    io.to(room).emit("receive-message", { userId, name, message });
   });
 
-app.listen(process.env.PORT, function () {
+  socket.on("disconnect", function () {
+    console.log("User diconnected " + socket.id);
+  });
+
+  socket.on("joinRoom", function (room) {
+    socket.join(room);
+    console.log(`${socket.id} joined ${room}`);
+  });
+});
+
+app.get("/", function (req, res) {});
+
+server.listen(process.env.PORT, function () {
   console.log(`Server Running on PORT ${process.env.PORT}`);
 });
