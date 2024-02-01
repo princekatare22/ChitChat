@@ -10,7 +10,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["https://chit-chat-frontend-red.vercel.app"],
+    origin: ["https://chit-chat-frontend-red.vercel.app/"],
     methods : ["POST", "GET"],
     credentials: true,
   },
@@ -18,7 +18,7 @@ const io = new Server(server, {
 
 app.use(
   cors({
-    origin: ["https://chit-chat-frontend-red.vercel.app"],
+    origin: ["https://chit-chat-frontend-red.vercel.app/"],
     methods : ["POST", "GET"],
     credentials: true,
   })
