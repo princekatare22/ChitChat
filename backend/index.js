@@ -8,12 +8,18 @@ const PORT = 3000;
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server, {cors: {origin: "*"}});
+const io = new Server(server, {
+  cors: {
+  "origin": "*",
+  "methods": "GET,PUT,POST,DELETE",
+}
+});
 
 app.use(
   cors({
-   origin: "*"
-  })
+  "origin": "*",
+  "methods": "GET,PUT,POST,DELETE",
+})
 );
 
 io.on("connection", function (socket) {
