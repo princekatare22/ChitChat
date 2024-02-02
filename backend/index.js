@@ -8,11 +8,22 @@ const PORT = 3000;
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server, {cors
+const io = new Server(server, {
+ cors: {
+    origin: ["https://chit-chat-frontend-red.vercel.app/"],
+    methods : ["POST", "GET"],
+    credentials: true,
+  }
 });
 
 app.use(
-  cors()
+  cors(
+    {
+    origin: ["https://chit-chat-frontend-red.vercel.app/"],
+    methods : ["POST", "GET"],
+    credentials: true,
+  }
+  )
 );
 
 io.on("connection", function (socket) {
