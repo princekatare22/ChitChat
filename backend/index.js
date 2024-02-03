@@ -10,16 +10,16 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-  "origin": "*",
-  "methods": "GET,PUT,POST,DELETE",
-}
+    origin: "*",
+    methods: ["GET", "PUT", "POST", "DELETE"],
+  },
 });
 
 app.use(
   cors({
-  "origin": "*",
-  "methods": "GET,PUT,POST,DELETE",
-})
+    origin: "*",
+    methods: ["GET", "PUT", "POST", "DELETE"],
+  })
 );
 
 io.on("connection", function (socket) {
