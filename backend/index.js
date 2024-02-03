@@ -8,10 +8,20 @@ const PORT = 5000;
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server);
+const io = new Server(server,{
 
-io.origins(["http://localhost:5000"]); 
-io.origins(["https://chit-chat-frontend-red.vercel.app"]);
+  cors: {
+    origin: "https://chit-chat-frontend-red.vercel.app",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["content-type"]
+  },
+  allowRequest: function(req, callback) {
+    callback(null, req.headers.referer.startsWith("https://example.com"));
+  }
+});
+
+// io.origins(["http://localhost:5000"]); 
+// io.origins(["https://chit-chat-frontend-red.vercel.app"]);
 
 app.use(
   cors({
