@@ -8,7 +8,7 @@ import { useEffect, useMemo, useState } from "react";
 import { io } from "socket.io-client";
 
 function App() {
-  const socket = useMemo(() => io("https://chitchatbackend-bptk.onrender.com"), []);
+  const socket = useMemo(() => io("https://chitchatbackend-bptk.onrender.com" || "http://localhost:5000"), []);
   
   const [Allmessage, setAllmessage] = useState([]);
   const [message, setMessage] = useState("");
