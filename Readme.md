@@ -1,1 +1,11 @@
-## Added Readme.md
+## 	ChitChat
+- Chitchar is Public Chat Webiste where users can enter into a room and chat with their friends via text , audio and vedio messages.
+- DEMO -- https://drive.google.com/file/d/1CONjzpfmsIrJBSL8De28wB6-nqGymATH/view?usp=drive_link
+- How to run the project --
+	-
+	- Open the project in and code editor and in the frontend run command 
+		- npm install - This will install all the required dependecies for the frontend.
+		- run command - npm run dev to start frontend
+	- In the backend directory go to index.js and set PORT to the desired port where you want your server to run then run command 
+		- npm install - This will install all the required dependecies for the frontend.
+		- run command - node index.js to start backend.
