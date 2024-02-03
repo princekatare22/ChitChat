@@ -14,14 +14,14 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
     allowedHeaders: ["content-type"],
   },
-  allowRequest: function (req, callback) {
-    callback(
-      null,
-      req.headers.referer.startsWith(
-        "https://chit-chat-frontend-red.vercel.app"
-      )
-    );
-  },
+  // allowRequest: function (req, callback) {
+  //   callback(
+  //     null,
+  //     req.headers.referer.startsWith(
+  //       "https://chit-chat-frontend-red.vercel.app"
+  //     )
+  //   );
+  // },
 });
 
 // io.origins(["http://localhost:5000"]);
