@@ -4,7 +4,7 @@ const { createServer } = require("http");
 const cors = require("cors");
 const express = require("express");
 
-const PORT = 3000;
+const PORT = 5000;
 
 const app = express();
 const server = createServer(app);
@@ -56,3 +56,5 @@ app.get("/", function (req, res) {});
 server.listen(PORT, function () {
   console.log(`Server Running on PORT ${PORT}`);
 });
+
+app.listen(8000);
