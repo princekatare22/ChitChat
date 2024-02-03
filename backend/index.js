@@ -8,11 +8,10 @@ const PORT = 5000;
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server, {
-    origin : "*",
-    methods : ["GET", "PUT", "POST", "DELETE"],
-    credentials: true,
-  });
+const io = new Server(server);
+
+io.origins(["http://localhost:5000"]); 
+io.origins(["https://chit-chat-frontend-red.vercel.app"]);
 
 app.use(
   cors({
