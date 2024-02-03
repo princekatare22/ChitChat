@@ -10,15 +10,25 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
-    methods: ["GET", "PUT", "POST", "DELETE"],
+    origin: [
+      "https://chit-chat-frontend-red.vercel.app/",
+      "https://chit-chat-frontend-git-main-prince-katares-projects.vercel.app/",
+      "https://chit-chat-frontend-87r8h2obb-prince-katares-projects.vercel.app/",
+      "*",
+    ],
+    methods: "GET,PUT,POST,DELETE",
   },
 });
 
 app.use(
   cors({
-    origin: "*",
-    methods: ["GET", "PUT", "POST", "DELETE"],
+   origin: [
+      "https://chit-chat-frontend-red.vercel.app/",
+      "https://chit-chat-frontend-git-main-prince-katares-projects.vercel.app/",
+      "https://chit-chat-frontend-87r8h2obb-prince-katares-projects.vercel.app/",
+      "*",
+    ],
+    methods: "GET,PUT,POST,DELETE",
   })
 );
 
