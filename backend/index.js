@@ -9,14 +9,14 @@ const PORT = 5000;
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
-    origins : ["*"],
+    origin : "*",
     methods : ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
   });
 
 app.use(
   cors({
-    origins: ["*"],
+    origin : "*",
     methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
   })
