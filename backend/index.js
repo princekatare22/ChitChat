@@ -9,44 +9,16 @@ const PORT = 5000;
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
-    origin: [
-             "http://localhost:5173", 
-             "https://chit-chat-frontend-red.vercel.app",
-             "https://chit-chat-frontend-git-main-prince-katares-projects.vercel.app",
-             "https://chit-chat-frontend-87r8h2obb-prince-katares-projects.vercel.app",
-             "*"
-            ],
+    origin: ["*"],
     methods: ["GET", "PUT", "POST", "DELETE"],
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-      "x-csrf-token",
-      "Access-Control-Allow-Origin",
-    ],
     credentials: true,
-    maxAge: 5000,
-    exposedHeaders: ["*", "Authorization", "https://chit-chat-frontend-red.vercel.app"],
   });
 
 app.use(
   cors({
-    origin: [
-             "http://localhost:5173", 
-             "https://chit-chat-frontend-red.vercel.app",
-             "https://chit-chat-frontend-git-main-prince-katares-projects.vercel.app",
-             "https://chit-chat-frontend-87r8h2obb-prince-katares-projects.vercel.app",
-             "*"
-            ],
+    origin: ["*"],
     methods: ["GET", "PUT", "POST", "DELETE"],
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-      "x-csrf-token",
-      "Access-Control-Allow-Origin",
-    ],
     credentials: true,
-    maxAge: 5000,
-    exposedHeaders: ["*", "Authorization", "https://chit-chat-frontend-red.vercel.app"],
   })
 );
 
