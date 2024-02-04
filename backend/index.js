@@ -13,7 +13,7 @@ const io = new Server(server, {
     origin: "*",
     methods: ["GET", "POST"],
     allowedHeaders: ["content-type"],
-  },
+  }
   // allowRequest: function (req, callback) {
   //   callback(
   //     null,
