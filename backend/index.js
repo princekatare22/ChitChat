@@ -8,7 +8,7 @@ const PORT = 5000;
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server, cors_allowed_origins="*");
+const io = new Server(server, cors_allowed_origins=['*']);
                 
                       
       // {
