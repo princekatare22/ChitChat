@@ -8,21 +8,24 @@ const PORT = 5000;
 
 const app = express();
 const server = createServer(app);
-const io = new Server(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["content-type"],
-  }
-  // allowRequest: function (req, callback) {
-  //   callback(
-  //     null,
-  //     req.headers.referer.startsWith(
-  //       "https://chit-chat-frontend-red.vercel.app"
-  //     )
-  //   );
-  // },
-});
+const io = new Server(server, cors_allowed_origins="*");
+                
+                      
+      // {
+//   cors: {
+//     origin: "*",
+//     methods: ["GET", "POST"],
+//     allowedHeaders: ["content-type"],
+//   }
+//   // allowRequest: function (req, callback) {
+//   //   callback(
+//   //     null,
+//   //     req.headers.referer.startsWith(
+//   //       "https://chit-chat-frontend-red.vercel.app"
+//   //     )
+//   //   );
+//   // },
+// });
 
 // io.origins(["http://localhost:5000"]);
 // io.origins(["https://chit-chat-frontend-red.vercel.app"]);
